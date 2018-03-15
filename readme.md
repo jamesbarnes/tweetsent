@@ -10,7 +10,7 @@ This is a simple Ruby program to check the sentiment of tweets in a given geogra
 - Scores each tweet by tokenizing the text field, and attempting to find each token in the sentiment hash; when tokens have a sentiment (postive or negative), that value is added to the total sentiment score for the query
 - Tells users the score, and a brief explaination of what that score means.
 
-###O Auth
+### OAuth
 OAuth tokens should be stored in a `.env` file, or the program will not work. They're called in lines 8 and 9 of `tweets.rb`
 
 ### Limitations
