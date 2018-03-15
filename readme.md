@@ -1,6 +1,6 @@
-#Twitter Location Sentiment Checker
+# Twitter Location Sentiment Checker
 
-###Introduction
+### Introduction
 This is a simple Ruby program to check the sentiment of tweets in a given geographic area. The sentiment analysis uses the [AFINN wordlist](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010) as a basis for sentiment scores. To accomplish this, it
 - Loads the AFINN wordlist and term sentiment scores into a hash.
 - Asks users for their location.
@@ -10,8 +10,8 @@ This is a simple Ruby program to check the sentiment of tweets in a given geogra
 - Scores each tweet by tokenizing the text field, and attempting to find each token in the sentiment hash; when tokens have a sentiment (postive or negative), that value is added to the total sentiment score for the query
 - Tells users the score, and a brief explaination of what that score means.
 
-###OAuth
+###O Auth
 OAuth tokens should be stored in a `.env` file, or the program will not work. They're called in lines 8 and 9 of `tweets.rb`
 
-###Limitations
+### Limitations
 The Twitter Search API will only return 100 tweets per location query, so the dataset for any given query is probably too small to perform any meaningful analysis on. Because the dataset is so small, and because this program doesn't persist any values after it has run, it didn't seem worthwhile to attempt writing anything to derive the sentiment of terms that aren't already in the AFINN wordlist. While most locations I tried running it with returned negative sentiment values, I found there were some locations, including Los Angeles, usually returned positive sentiments. While I'm sure the algorithm for determining sentiment could be further tuned based on the prevalence of negative results, getting an accurate response didn't seem as important for this exercise as did getting the geocoder and Twitter search API to work correnctly, and parsing the response, than it did to get a robust sentiment analysis system working.
